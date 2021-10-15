@@ -1,0 +1,9 @@
+<h2>Movies with the Same Director as -- <%= @movie.title  %></h2> 
+  <% @same_director_movies.each do |same_movie_director| %>
+    <thread>
+      <tr>
+      <li><%= same_movie_director %></li>
+      </tr>
+  <% end %>
+</thead>
+<%= link_to 'Return to Movie Table', movies_path %>

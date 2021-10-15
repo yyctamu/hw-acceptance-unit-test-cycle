@@ -17,9 +17,15 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   end
 end
 
+Then /the director of "(.*)" should be "(.*)"/ do |movie_name, director|
+  Movie.find_by_title(movie_name).director.should eq director
+end
+
+
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
 end
+
